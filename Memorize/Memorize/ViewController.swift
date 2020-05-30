@@ -10,53 +10,22 @@ import UIKit
 
 class ViewController: UITableViewController {
 
-	var items = [MemoryItem]()
+	let dataSource = MemoryDataSource()
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
 		title = "Speeches"
-		loadItems()
+		tableView.dataSource = dataSource
 	}
 
-	func loadItems() {
-		guard let url = Bundle.main.url(forResource: "Items", withExtension: "json") else {
-			fatalError("Can't find JSON.")
-		}
-
-		guard let data = try? Data(contentsOf: url) else {
-			fatalError("Unable to load JSON.")
-		}
-
-		let decoder = JSONDecoder()
-
-		guard let savedItems = try? decoder.decode([MemoryItem].self, from: data) else {
-			fatalError("Failed to decode JSON.")
-		}
-
-		items = savedItems
-	}
-
-
-	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		items.count
-	}
-
-	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-		let item = items[indexPath.row]
-		cell.textLabel?.text = item.title
-		cell.detailTextLabel?.text = item.text
-
-		return cell
-	}
 
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		guard let vc = storyboard?.instantiateViewController(identifier: "MemoryViewController") as? MemoryViewController else {
 			fatalError("Unable to instantiate memory view controller.")
 		}
 
-		let item = items[indexPath.row]
+		let item = dataSource.item(at: indexPath.row)
 		vc.item = item
 
 		navigationController?.pushViewController(vc, animated: true)

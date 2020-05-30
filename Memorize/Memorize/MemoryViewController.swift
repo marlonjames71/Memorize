@@ -35,15 +35,15 @@ class MemoryViewController: UIViewController {
 		// We could, and I'll probably switch to dependency injection, but this is pretty neat
         assert(item != nil, "You must provide a memory item before trying to show this view controller.")
 		title = item.title
-		showText()
+		textView.attributedText = self.showText(for: item)
 
 		let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(wordsTapped))
 		textView.addGestureRecognizer(tapRecognizer)
     }
 
 
-	private func showText() {
-		let words = item.text.components(separatedBy: " ")
+	private func showText(for memoryItem: MemoryItem) -> NSAttributedString {
+		let words = memoryItem.text.components(separatedBy: " ")
 		let output = NSMutableAttributedString()
 
 		let space = NSAttributedString(string: " ", attributes: visibleText)
@@ -72,12 +72,12 @@ class MemoryViewController: UIViewController {
 			output.append(space)
 		}
 
-		textView.attributedText = output
+		return output
 	}
 
 
 	@objc private func wordsTapped() {
 		blankCounter += 1
-		self.showText()
+		textView.attributedText = self.showText(for: item)
 	}
 }
