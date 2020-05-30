@@ -15,6 +15,7 @@
 		37E7E0EC2482229900CA30EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37E7E0EA2482229900CA30EE /* LaunchScreen.storyboard */; };
 		37E7E0F42482235900CA30EE /* MemoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E7E0F32482235900CA30EE /* MemoryItem.swift */; };
 		37E7E0F624822D0300CA30EE /* Items.json in Resources */ = {isa = PBXBuildFile; fileRef = 37E7E0F524822D0300CA30EE /* Items.json */; };
+		37E7E0F82482352800CA30EE /* MemoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E7E0F72482352800CA30EE /* MemoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		37E7E0ED2482229900CA30EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		37E7E0F32482235900CA30EE /* MemoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryItem.swift; sourceTree = "<group>"; };
 		37E7E0F524822D0300CA30EE /* Items.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Items.json; sourceTree = "<group>"; };
+		37E7E0F72482352800CA30EE /* MemoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,8 +65,9 @@
 				37E7E0DF2482229700CA30EE /* AppDelegate.swift */,
 				37E7E0E12482229700CA30EE /* SceneDelegate.swift */,
 				37E7E0E32482229700CA30EE /* ViewController.swift */,
-				37E7E0E52482229700CA30EE /* Main.storyboard */,
+				37E7E0F72482352800CA30EE /* MemoryViewController.swift */,
 				37E7E0F32482235900CA30EE /* MemoryItem.swift */,
+				37E7E0E52482229700CA30EE /* Main.storyboard */,
 				37E7E0E82482229900CA30EE /* Assets.xcassets */,
 				37E7E0EA2482229900CA30EE /* LaunchScreen.storyboard */,
 				37E7E0ED2482229900CA30EE /* Info.plist */,
@@ -149,6 +152,7 @@
 				37E7E0E02482229700CA30EE /* AppDelegate.swift in Sources */,
 				37E7E0E22482229700CA30EE /* SceneDelegate.swift in Sources */,
 				37E7E0F42482235900CA30EE /* MemoryItem.swift in Sources */,
+				37E7E0F82482352800CA30EE /* MemoryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
